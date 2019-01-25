@@ -63,7 +63,7 @@ class LeaveController extends Controller
     public function show(Request $request, Leave $leaf)
     {
         // check if currently authenticated user is the owner of the leave
-        if ($request->user()->id !== $leaf->user_id) {
+        if ($request->user()->id != $leaf->user_id) {
             return response()->json(['error' => 'You can only view your own leaves.'], 403);
         }
 
@@ -80,7 +80,7 @@ class LeaveController extends Controller
     public function update(Request $request, Leave $leaf)
     {
         // check if currently authenticated user is the owner of the leave
-        if ($request->user()->id !== $leaf->user_id) {
+        if ($request->user()->id != $leaf->user_id) {
             return response()->json(['error' => 'You can only edit your own leaves.'], 403);
         }
 
@@ -132,7 +132,7 @@ class LeaveController extends Controller
     public function destroy(Request $request, Leave $leaf)
     {
         // check if currently authenticated user is the owner of the leave
-        if ($request->user()->id !== $leaf->user_id) {
+        if ($request->user()->id != $leaf->user_id) {
             return response()->json(['error' => 'You can only delete your own leaves.'], 403);
         }
 

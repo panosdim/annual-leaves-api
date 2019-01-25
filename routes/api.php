@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 use Illuminate\Http\Request;
 
 /*
@@ -15,6 +16,15 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+Route::middleware('auth:api')->put('/user/{user}', function (Request $request, User $user) {
+    // check if currently authenticated user is trying to update himself
+    if ($request->user()->id != $user->id) {
+        return response()->json(['error' => 'You can only edit yourself.'], 403);
+    }
+
+    $user->update($request->only(['name', 'total_leaves']));
+    return $user;
 });
 Route::post('register', 'AuthController@register');
 Route::post('login', 'AuthController@login');
