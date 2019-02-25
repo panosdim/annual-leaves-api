@@ -11,7 +11,7 @@ return [
     */
 
     'supportsCredentials' => false,
-    'allowedOrigins' => ['http://localhost:3000', 'leaves.cc.nf'],
+    'allowedOrigins' => ['http://leaves.cc.nf', 'https://leaves.cc.nf'],
     'allowedOriginsPatterns' => [],
     'allowedHeaders' => ['*'],
     'allowedMethods' => ['*'],
