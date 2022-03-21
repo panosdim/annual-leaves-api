@@ -11,7 +11,7 @@ return [
     */
 
     'supportsCredentials' => false,
-    'allowedOrigins' => ['http://leaves.cc.nf', 'https://leaves.cc.nf'],
+    'allowedOrigins' => ['https://leaves.sites.freeddns.org:9006'],
     'allowedOriginsPatterns' => [],
     'allowedHeaders' => ['*'],
     'allowedMethods' => ['*'],
